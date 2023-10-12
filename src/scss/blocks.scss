@@ -310,6 +310,10 @@
             object-fit: cover;
             display: block;
         }
+
+        @media(max-width:799px) {
+            display: none;
+        }
     }
 }
 

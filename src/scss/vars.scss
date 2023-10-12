@@ -10,6 +10,12 @@ $lightTextColor: #fff;
     padding: 0;
 }
 
+@mixin resetButtons {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
 @mixin verticalFlex {
     display: flex;
     flex-direction: column;

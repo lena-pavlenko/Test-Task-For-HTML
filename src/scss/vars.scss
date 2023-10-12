@@ -1,8 +1,14 @@
 $redColor: #D30531;
 $blueColor: #004685;
 $textColor: #000000;
+$lightTextColor: #fff;
 
 @mixin noSpaces {
     margin: 0;
     padding: 0;
+}
+
+@mixin verticalFlex {
+    display: flex;
+    flex-direction: column;
 }

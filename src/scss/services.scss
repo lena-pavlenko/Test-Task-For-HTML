@@ -1,0 +1,31 @@
+.services {
+    padding: 60px 0 30px;
+
+    &__title {
+        margin-bottom: 13px;
+        text-align: center;
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 28px;
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 18px;
+    }
+
+    &__link {
+        font-size: 20px;
+        line-height: 1.5;
+        color: $blueColor;
+        border-bottom: 1px dashed $blueColor;
+        text-decoration: none;
+
+        &-text {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+    }
+}

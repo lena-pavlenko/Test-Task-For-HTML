@@ -1,3 +1,9 @@
 .footer {
     flex-shrink: 1;
+    padding: 32px 0 39.5px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
 }

@@ -1,4 +1,9 @@
 .banner {
     width: 100%;
-    background: center/cover no-repeat url(../img/pic_main.jpg);
+    background: center top/cover no-repeat url(../img/pic_main.jpg);
+    padding: 89px 0 112px;
+
+    &__title {
+        margin-bottom: 16px;
+    }
 }

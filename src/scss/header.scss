@@ -1,10 +1,14 @@
 .header {
     flex-shrink: 1;
-    padding: 11px 0 13px;
+    padding: 8px;
 
     &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .logo {
+        margin-right: 2%;
     }
 }

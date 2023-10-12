@@ -1,9 +1,22 @@
 .footer {
     flex-shrink: 1;
-    padding: 32px 0 39.5px;
+    padding: 32px 0 40px;
+    background: $lightBlue;
 
     &__content {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__rights {
+        @include verticalFlex;
+        font-weight: 600;
+        line-height: 1.375;
+        margin: 0;
+    }
+
+    &__logo {
+        height: 52px;
     }
 }

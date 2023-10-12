@@ -9,18 +9,45 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="wide-container">
+            <div class="container container_wide">
                 <div class="header__content">
-                    <button class="menu-btn">
-                        <span class="menu-btn__line"></span>
-                        <span class="menu-btn__line"></span>
-                    </button>
+                    <div class="header__menu-wrapper">
+                        <button class="menu-btn">
+                            <span class="menu-btn__line"></span>
+                        </button>
+                    </div>
+                    
                     <a href="/" class="logo">
                         <img src="./img/logo_site-logo.svg" alt="thissitetitle">
                     </a>
+
+                    <div class="header__help-wrapper">
+                        <button class="help">
+                            <svg class="help__icon">
+                                <use xlink:href="./img/icons/sprite.svg#ic_help"></use>
+                            </svg>
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </header>
+        <main class="main">
+            <section class="banner">
+                <div class="container">
+                    <div class="banner__content">
+                        <h1 class="title title_h1">Поиск начислений</h1>
+                        <form name="search-form" class="form-control">
+                            <div class="input-block">
+                                <input type="text" class="input-block__field" placeholder="Введите данные для поиска">
+                                <span class="input-block__clue">Чем больше параметров введено, тем полнее результаты поиска</span>
+                            </div>
+                            <button type="submit" class="btn form-control__btn">Найти</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
     <script src="js/main.js"></script>
 </body>

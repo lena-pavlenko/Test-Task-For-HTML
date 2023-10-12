@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    @include noSpaces;
+    font-family: 'OpenSans';
+    font-weight: 400;
+    color: $textColor;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.wide-container {
+    margin: 0 auto;
+    max-width: 1218px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    &_wide {
+        max-width: 1218px;
+        padding: 0;
+    }
+}

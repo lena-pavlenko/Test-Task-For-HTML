@@ -1,14 +1,33 @@
 .header {
     flex-shrink: 1;
-    padding: 8px;
+    padding: 8px 24px 8px 33px;
+    background: #fff;
+
+    &.sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid #00468533;
+        z-index: 2;
+    }
 
     &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
     }
 
     .logo {
         margin-right: 2%;
+    }
+
+    &__help-wrapper {
+        position: relative;
+    }
+
+    &__menu-wrapper {
+        position: relative;
     }
 }

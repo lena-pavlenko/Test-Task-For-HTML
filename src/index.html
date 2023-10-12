@@ -9,26 +9,47 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="container container_wide">
-                <div class="header__content">
-                    <div class="header__menu-wrapper">
-                        <button class="menu-btn">
-                            <span class="menu-btn__line"></span>
-                        </button>
+            <div class="header__content">
+                <div class="header__menu-wrapper">
+                    <button class="menu-btn">
+                        <span class="menu-btn__line"></span>
+                        <span class="menu-btn__line"></span>
+                        <span class="menu-btn__line"></span>
+                        <span class="menu-btn__line"></span>
+                    </button>
+                    <div class="menu">
+                        <div class="menu__content">
+                            <ul class="menu__list">
+                                <div class="menu__title">ЛИЧНЫЙ КАБИНЕТ</div>
+                                <li class="menu__item"><a href="#" class="menu__link" data-modal="modalAuth">Вход в Личный кабинет</a></li>
+                            </ul>
+                            <ul class="menu__list">
+                                <div class="menu__title">КАК ЭТО РАБОТАЕТ</div>
+                                <li class="menu__item"><a href="#" class="menu__link">Условия использования сервисат</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">Способы оплаты</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">Часто задаваемые вопросы</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">Служба поддержки</a></li>
+                            </ul>
+                        </div>
+                        
                     </div>
-                    
-                    <a href="/" class="logo">
-                        <img src="./img/logo_site-logo.svg" alt="thissitetitle">
-                    </a>
-
-                    <div class="header__help-wrapper">
-                        <button class="help">
-                            <svg class="help__icon">
-                                <use xlink:href="./img/icons/sprite.svg#ic_help"></use>
-                            </svg>
-                        </button>
+                </div>
+                <a href="/" class="logo">
+                    <img src="./img/logo_site-logo.svg" alt="thissitetitle">
+                </a>
+                <div class="header__help-wrapper">
+                    <button class="help">
+                        <svg class="help__icon">
+                            <use id="helpIcon" xlink:href="./img/icons/sprite.svg#ic_help"></use>
+                        </svg>
+                    </button>
+                    <div class="help-card">
+                        <div class="help-card__content">
+                            <span class="help-card__title">Тел. поддержки</span>
+                            <a href="tel:88001234567" class="help-card__phone">8 800 123-45-67</a>
+                            <a href="#" class="help-card__link">Написать письмо</a>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </header>
@@ -37,12 +58,15 @@
                 <div class="container">
                     <div class="banner__content">
                         <h2 class="title title_h2 title_light banner__title">Поиск начислений</h2>
-                        <form name="search-form" class="form-control">
+                        <form name="search-form" class="form-search">
                             <div class="input-block">
-                                <input type="text" class="input-block__field" placeholder="Введите данные для поиска">
+                                <div class="input-block__input-wrap">
+                                    <input type="text" class="input-block__field" placeholder="Введите данные для поиска">
+                                    
+                                </div>
                                 <span class="input-block__clue">Чем больше параметров введено, тем полнее результаты поиска</span>
                             </div>
-                            <button type="submit" class="btn form-control__btn">Найти</button>
+                            <button type="submit" class="btn form-search__btn">Найти</button>
                         </form>
                     </div>
                 </div>
@@ -52,10 +76,10 @@
                     <div class="container">
                         <h2 class="title title_h2 services__title">Здесь можно оплатить</h2>
                         <div class="services__links">
-                            <a href="#fineGibdd" class="services__link">Штрафы ГИБДД</a>
-                            <a href="#judicialDebt" class="services__link">Судебные задолженности</a>
-                            <a href="#taxes" class="services__link">Налоги</a>
-                            <a href="#rosreestrServices" class="services__link">Услуги Росреестра</a>
+                            <a href="#fineGibdd" data-type="smooth-link" class="services__link">Штрафы ГИБДД</a>
+                            <a href="#judicialDebt" data-type="smooth-link" class="services__link">Судебные задолженности</a>
+                            <a href="#taxes" data-type="smooth-link" class="services__link">Налоги</a>
+                            <a href="#rosreestrServices" data-type="smooth-link" class="services__link">Услуги Росреестра</a>
                             <span class="services__link-text">и другие услуги</span>
                         </div>
                     </div>
@@ -187,13 +211,34 @@
             </section>
         </main>
         <footer class="footer">
-            <div class="container container_wide">
-                <div class="footer__content">
-                    <p class="footer__rights">© 2012 – 2020 <span>ООО «Название компании»</span></p>
-                    <img src="./img/trustlogo2.png" alt="comodo secure" class="footer__logo">
-                </div>
+            <div class="footer__content">
+                <p class="footer__rights">© 2012 – 2020 <span>ООО «Название компании»</span></p>
+                <img src="./img/trustlogo2.png" alt="comodo secure" class="footer__logo">
             </div>
         </footer>
+        <div class="modal" id="modalAuth">
+            <div class="modal__content">
+                <button class="modal__close">
+                    <svg class="close-icon">
+                        <use id="CloseIcon" xlink:href="./img/icons/sprite.svg#ic_close"></use>
+                    </svg>
+                </button>
+                <div class="modal__title">Введите логин и пароль для входа в Личный кабинет</div>
+                <form name="auth-form" class="form-control">
+                    <div class="input-block form-control__input-block">
+                        <input type="text" class="input-block__field" placeholder="Логин">
+                    </div>
+                    <div class="input-block form-control__input-block">
+                        <input type="password" class="input-block__field" placeholder="Пароль">
+                    </div>
+                    <button type="submit" class="btn form-control__btn">Войти</button>
+                </form>
+                <div class="auth-links modal__auth-links">
+                    <a href="#" class="auth-links__item">Напомнить пароль</a>
+                    <a href="#" class="auth-links__item">Регистрация</a>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/main.js"></script>
 </body>

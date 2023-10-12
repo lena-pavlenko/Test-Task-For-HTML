@@ -26,20 +26,10 @@ body {
     flex-grow: 1;
 }
 
-.wide-container {
-    margin: 0 auto;
-    max-width: 1218px;
-}
-
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-
-    &_wide {
-        max-width: 1218px;
-        padding: 0;
-    }
 }
 
 .grid-block {

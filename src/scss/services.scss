@@ -23,9 +23,13 @@
         border-bottom: 1px dashed $blueColor;
         text-decoration: none;
 
+        &:hover {
+            color: $hoverBlue;
+        }
+
         &-text {
-            font-size: 20px;
-            line-height: 1.5;
+            font-size: 19px;
+            line-height: 1.4;
         }
     }
 }

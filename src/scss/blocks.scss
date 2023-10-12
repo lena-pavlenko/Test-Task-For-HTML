@@ -9,10 +9,76 @@
     border: none;
     background: transparent;
     cursor: pointer;
+    position: relative;
 
     &__icon {
         width: 44px;
         height: 44px;
+    }
+
+    #helpIcon {
+        --color1: #004685;
+    }
+
+    &:hover {
+        #helpIcon {
+            --color1: #569DDC;
+        }
+    }
+
+    &-card {
+        display: none;
+        transition: 1s;
+        position: absolute;
+        width: 241px;
+        height: 150px;
+        background: #fff;
+        box-shadow: 0px 3px 12px #00000033;
+        padding: 24px 16px;
+        right: -11px;
+        top: 88%;
+
+        &.show {
+            display: block;
+            animation: shows .5s;
+        }
+
+        &.hides {
+            display: block;
+            animation: hides .5s;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                border: 11px solid transparent;
+                border-bottom: 13px solid #fff;
+                top: -46px;
+                right: 0;
+            }
+        }
+
+        &__phone {
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 1.36;
+            margin-bottom: 20px;
+            color: $textColor;
+            text-decoration: none;
+        }
+
+        &__link {
+            line-height: 1.375;
+            font-weight: 600;
+            color: $blueColor;
+        }
     }
 }
 
@@ -21,31 +87,123 @@
     position: relative;
     border: none;
     background: transparent;
-    @include verticalFlex;
-    gap: 7px;
     cursor: pointer;
     padding: 0;
-
-    &::after {
-        content: '';
-        width: 30px;
-        height: 3px;
-        background: $blueColor;
-        display: block;
-    }
-
-    &::before {
-        content: '';
-        width: 30px;
-        height: 3px;
-        background: $blueColor;
-        display: block;
-    }
+    height: 23px;
+    width: 30px;
+    transition: .5s ease-in-out;
+    transform: rotate(0deg);
 
     &__line {
-        width: 30px;
+        width: 100%;
         height: 3px;
         background: $blueColor;
+        position: absolute;
+        transition: .25s ease-in-out;
+        transform: rotate(0deg);
+        left: 0;
+
+        &:first-child {
+            top: -2px;
+        }
+
+        &:nth-child(2) {
+            top: 8px;
+        }
+
+        &:nth-child(3) {
+            top: 8px;
+        }
+
+        &:last-child {
+            top: 18px;
+        }
+    }
+
+    &:hover {
+        .menu-btn__line {
+            background: $hoverBlue;
+        }
+    }
+
+    &.open {
+        .menu-btn__line:first-child {
+            top: 18px;
+            width: 0%;
+            left: 50%;
+            opacity: 0;
+        }
+
+        .menu-btn__line:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .menu-btn__line:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+
+        .menu-btn__line:last-child {
+            top: 18px;
+            width: 0%;
+            left: 50%;
+            opacity: 0;
+        }
+    }
+}
+
+.menu {
+    box-shadow: 0px 3px 12px #00000029;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 2;
+    top: 68px;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    padding: 21px 20px;
+    border-top: 1px solid rgba(112, 112, 112, 0.51);
+    visibility: hidden;
+    transform: translateX(-100vw);
+    transition: .5s;
+
+    &.open {
+        visibility: visible;
+        transform: translateX(0);
+        transition: .5s;
+    }
+
+    &__list {
+        @include noSpaces;
+
+        &:not(&:last-child) {
+            margin-bottom: 41px;
+        }
+    }
+
+    &__item {
+        list-style: none;
+        font-size: 16px;
+        line-height: 1.375;
+        font-weight: 400;
+
+        &:not(.menu__item:last-child) {
+            margin-bottom: 22px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    &__link {
+        color: $blueColor;
+
+        &:hover {
+            color: $hoverBlue; 
+        }
     }
 }
 
@@ -104,80 +262,24 @@
     }
 }
 
-.form-control {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 17.5px;
-    width: 100%;
-}
-
-.input-block {
-    @include verticalFlex;
-    gap: 12px;
-    flex-grow: 1;
-
-    &__field {
-        background: #FFFFFF;
-        border: 2px solid #00468533;
-        border-radius: 8px;
-        padding: 19px 21px;
-        height: 60px;
-        width: 100%;
-        font-size: 16px;
-        line-height: 1.375;
-        color: #00000075;
-        outline: none;
-        font-family: 'OpenSans';
-
-        &::placeholder {
-            font-family: 'OpenSans';
-            font-size: 16px;
-            line-height: 1.375;
-            color: #00000075;
-        }
-
-        &:focus::placeholder {
-            color: #00000033;
-        }
-    }
-
-    &__clue {
-        color: $lightTextColor;
-        font-style: 16px;
-        line-height: 1.375;
-    }
-}
-
-.btn {
-    width: 142px;
-    height: 60px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.375;
-    text-align: center;
-    color: $lightTextColor;
-    background: $redColor;
-    padding: 14px 32px 13px;
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-        background: #E1133F;
-    }
-}
-
 .article-wrapper {
     position: relative;
+
+    &:last-child {
+
+        .article::after {
+            display: none;
+        }
+    }
 }
 
 .article {
     padding: 60px 0;
     display: flex;
+    align-items: flex-start;
     gap: 40px;
 
-    &:not(&:last-child)::after {
+    &::after {
         content: '';
         background: #00468533;
         width: 100%;
@@ -227,5 +329,23 @@
         font-weight: 600;
         text-align: center;
         margin-top: 15px;
+    }
+}
+
+.auth-links {
+    @include verticalFlex;
+    gap: 16px;
+
+    &__item {
+        font-size: 16px;
+        line-height: 1.5;
+        color: $blueColor;
+        border-bottom: 1px dashed #004685;
+        text-decoration: none;
+        width: fit-content;
+
+        &:hover {
+            color: $hoverBlue;
+        }
     }
 }

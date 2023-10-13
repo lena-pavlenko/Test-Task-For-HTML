@@ -8,6 +8,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const browsersync = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
+const svgSprite = require('gulp-svg-sprite');
 
 const paths = {
     html: {
@@ -65,6 +66,19 @@ function styles() {
     .pipe(browsersync.stream())
 }
 
+function sprite() {
+    return gulp.src('src/img/icons/*.svg') // svg files for sprite
+    .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: "../sprite.svg"  //sprite file name
+                }
+            },
+        }
+    ))
+    .pipe(gulp.dest('dist/img/icons/'));
+}
+
 function scripts() {
     return gulp.src(paths.scripts.src)
     .pipe(sourcemaps.init())
@@ -101,7 +115,7 @@ function watch() {
     gulp.watch(paths.ico.src, ico)
 }
 
-const build = gulp.series(clean, gulp.parallel(html, styles, scripts, img, fonts, ico), watch);
+const build = gulp.series(clean, gulp.parallel(html, styles, scripts, img, fonts, ico, sprite), watch);
 
 function clean() {
     return del(['dist'])

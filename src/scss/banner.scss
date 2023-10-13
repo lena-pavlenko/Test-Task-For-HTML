@@ -1,0 +1,18 @@
+.banner {
+    width: 100%;
+    background: center top/cover no-repeat url(../img/pic_main.jpg);
+    padding: 89px 0 112px;
+
+    @media(max-width: 799px) {
+        padding: 40px 0;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+
+        @media(max-width: 799px) {
+            text-align: center;
+            margin-bottom: 19px;
+        }
+    }
+}

@@ -29,6 +29,11 @@
         max-width: 400px;
         width: clamp(300px, 400px, 100%);
         overflow: auto;
+
+        @media(max-width: 799px) {
+            height: 100vh;
+            padding: 24px 20px;
+        }
     }
 
     &__title {
@@ -46,9 +51,19 @@
         background: transparent;
         cursor: pointer;
 
+        @media(max-width: 799px) {
+            top: 12px;
+            right: 12px;
+        }
+
         .close-icon {
             width: 22px;
             height: 22px;
+
+            @media(max-width: 799px) {
+                width: 24px;
+                height: 24px;
+            }
         }
 
         #CloseIcon {

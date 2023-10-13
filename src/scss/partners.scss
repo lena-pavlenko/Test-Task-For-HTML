@@ -1,8 +1,16 @@
 .partners {
     padding: 32px 0 60px;
 
+    @media(max-width:799px) {
+        padding: 13.49px 0 32px;
+    }
+
     &__title {
         text-align: center;
         margin-bottom: 53px;
+
+        @media(max-width:799px) {
+            margin-bottom: 27px;
+        }
     }
 }

@@ -3,6 +3,10 @@
     gap: 12px;
     flex-grow: 1;
 
+    @media(max-width:799px) {
+        gap: 8px;
+    }
+
     &__input-wrap {
         position: relative;
     }
@@ -30,16 +34,17 @@
         &:focus::placeholder {
             color: #00000033;
         }
-
-        @media(max-width:799px) {
-            height: 48px;
-        }
     }
 
     &__clue {
         color: $lightTextColor;
-        font-style: 16px;
+        font-size: 16px;
         line-height: 1.375;
+
+        @media(max-width:799px) {
+            font-size: 12px;
+            line-height: 1.3;
+        }
     }
 }
 
@@ -68,6 +73,31 @@
     gap: 17.5px;
     width: 100%;
 
+    .input-block {
+
+        &__field {
+            @media(max-width:799px) {
+                height: 48px;
+                border-radius: 4px;
+                padding: 13px 40px 13px 12px;
+                transition: .5s;
+            }
+        }
+        
+        &__input-wrap {
+
+            &.focus {
+
+                .input-block__field {
+                    height: 60px;
+                    width: calc(100% + 20px);
+                    transition: .5s;
+                    padding: 19px 24px;
+                }
+            }
+        }
+    }
+
     &__btn {
         width: 142px;
 
@@ -86,6 +116,13 @@
 
             @media(max-width:799px) {
                 display: block;
+            }
+
+            &:hover {
+
+                .form-search__icon {
+                    fill: $hoverBlue;
+                }
             }
         }
     }
